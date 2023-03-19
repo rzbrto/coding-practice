@@ -1,4 +1,4 @@
-package CashRegisterPackage;
+package Assignment2.CashRegisterPackage;
 
 import java.util.Scanner;
 
@@ -26,3 +26,13 @@ public class CashRegister {
         System.out.println("Total Due: $" + ((int)((total + .005f) * 100))/100f);
     }
 }
+//    Enter the quantity of the first product: 7
+//        Enter the price of the first product: $1
+//        Enter the quantity of the second product: 2
+//        Enter the price of the second product: $5
+//        Enter the quantity of the third product: 1
+//        Enter the price of the third product: $ 10
+//
+//        Subtotal: $27.00
+//        Sales Tax: $1.89
+//        Total Due: $28.89
