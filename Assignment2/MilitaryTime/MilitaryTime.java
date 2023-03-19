@@ -1,9 +1,18 @@
 package Assignment2.MilitaryTime;
 
+import java.util.Scanner;
+
 public class MilitaryTime {
     public static void main(String[] args) {
+        Scanner kbd = new Scanner(System.in);
+        System.out.print("Please enter the first time: ");
+        int firstTime = kbd.nextInt();
+        System.out.println("Please enter the second time: ");
+        int secondTime = kbd.nextInt();
+
 
     }
+
 }
 /*
   Please enter the first time: 0050
