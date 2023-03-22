@@ -14,7 +14,7 @@ public class MilitaryTime {
         int differenceInMinutes = secondTimeMinutes - firstTimeMinutes;
 
         if (differenceInMinutes < 0) {
-            differenceInMinutes = (24 * 60) + differenceInMinutes;
+            differenceInMinutes += (24 * 60);
         }
         System.out.printf("The difference in the two times is %d hour(s) and %d minutes(s)", differenceInMinutes / 60, differenceInMinutes % 60);
 
