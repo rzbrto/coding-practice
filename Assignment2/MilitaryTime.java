@@ -1,4 +1,4 @@
-package Assignment2.MilitaryTime;
+package Assignment2;
 
 import java.util.Scanner;
 
@@ -13,9 +13,8 @@ public class MilitaryTime {
         int secondTimeMinutes = ((secondTime / 100) * 60) + (secondTime % 100);
         int differenceInMinutes = secondTimeMinutes - firstTimeMinutes;
 
-        if (differenceInMinutes < 0) {
-            differenceInMinutes += (24 * 60);
-        }
+        if (differenceInMinutes < 0) { differenceInMinutes += (24 * 60); }
+
         System.out.printf("The difference in the two times is %d hour(s) and %d minutes(s)", differenceInMinutes / 60, differenceInMinutes % 60);
 
     }

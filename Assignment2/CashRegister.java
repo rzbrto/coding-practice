@@ -1,4 +1,4 @@
-package Assignment2.CashRegisterPackage;
+package Assignment2;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class CashRegister {
         System.out.println("Enter the price of the third product: $ ");
         float thirdPrice = kbd.nextFloat();
         System.out.println("");
-        float subtotal= firstPrice + secondPrice + thirdPrice;
+        float subtotal= (firstPrice * firstQuantity) + (secondPrice * secondQuantity) + (thirdPrice * thirdQuantity);
         System.out.println("Subtotal: $" + subtotal);
         float salesTax = subtotal * 0.07f;
         System.out.println("Sales Tax: $" + salesTax);
@@ -26,7 +26,7 @@ public class CashRegister {
         System.out.println("Total Due: $" + ((int)((total + .005f) * 100))/100f);
     }
 }
-//    Enter the quantity of the first product: 7
+//        Enter the quantity of the first product: 7
 //        Enter the price of the first product: $1
 //        Enter the quantity of the second product: 2
 //        Enter the price of the second product: $5
