@@ -7,8 +7,8 @@ public class TempConverter {
         Scanner kbd = new Scanner(System.in);
         System.out.println("Enter a temperature: ");
         double userTemp = kbd.nextDouble();
-        System.out.println("Enter (C)elsius or (F)ahrenheit: ");
-        String userTempType = kbd.nextLine();
+        System.out.print("Enter (C)elsius or (F)ahrenheit: ");
+        String userTempType = kbd.next();
 
         if (userTempType.equalsIgnoreCase("c") || userTempType.equalsIgnoreCase("Celsius: ")) {
             System.out.print("The equivalent temperature in Celsius is: " + (userTemp * 1.8) + 32);
