@@ -26,7 +26,7 @@ public class BankAccount {
         return "wrong";
     }
 
-    public static void main(String[] args) {
+    public static float getBalance(){
         Scanner kbd = new Scanner(System.in);
         String balance;
         int attempts = 1;
@@ -41,8 +41,61 @@ public class BankAccount {
             balance = checkID(accountNumber, password);
             attempts ++;
         } while (balance.equals("wrong"));
-
+        return Float.parseFloat(balance);
     }
+
+    public static void printBalance(float balance) {
+        //Your Current Balance is $520.36
+    }
+
+    private static void printOptions() {
+        //Choose From the Following Options:
+// 1. Display Balance
+// 2. Deposit
+// 3. Withdraw
+// 4. Log Out
+    }
+    private static void logout() {
+        //LOGGED OUT
+    }
+
+    private static void withdraw() {
+        //Amount to Withdrawl: $ 20
+    //Your New Balance is 520.36
+    }
+
+    private static void deposit() {
+        //Amount to Deposit: $ 20
+//Your New Balance is $540.36
+    }
+
+
+    public static void main(String[] args) {
+        Scanner kbd = new Scanner(System.in);
+
+        float balance = getBalance();
+
+        System.out.println("Balance: $" + balance);
+        while (true) {
+            printOptions();
+            String option = kbd.nextLine();
+            switch (option) {
+                case "1":
+                    printBalance(balance);
+                case "2":
+                    deposit();
+                case "3":
+                    withdraw();
+                case "4":
+                    logout();
+                default:
+                    System.out.println("invalid option");
+            }
+        }
+    }
+
+
+
 }
 //Account Number:
 //44567-5
