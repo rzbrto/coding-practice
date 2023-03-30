@@ -1,12 +1,9 @@
-package Assignment8;
+package Assignment9;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 
-public class BankAccount {
+public class ATM {
 
     public static String checkID(String accountNumber, String password) {
         String a = "44567-5 mypassword 520.36";

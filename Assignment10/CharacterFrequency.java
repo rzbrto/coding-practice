@@ -1,10 +1,8 @@
-package Assignment8;
-
-import Assignment6.SwitchCase;
+package Assignment10;
 
 import java.util.Scanner;
 
-public class Telephone {
+public class CharacterFrequency {
     public static void main(String[] args) {
         Scanner kbd = new Scanner(System.in);
         System.out.print("Please enter a 10-digit telephone number: ");
