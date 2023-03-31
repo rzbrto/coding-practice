@@ -3,16 +3,48 @@ package Assingment11;
 import java.util.Scanner;
 
 public class ListStats {
+    public static int[] convertStringIntoIntArray(String positiveIntegers) {
+        Scanner kbd = new Scanner(System.in);
+        positiveIntegers = kbd.nextLine();
+        String[] stringArray = positiveIntegers.split(" ");
+        int[] intArray = new int[stringArray.length];
+
+        for (int i = 0; i < stringArray.length + 1; i++) {
+            intArray[i] = Integer.parseInt(stringArray[i]);
+        }
+        return intArray;
+    }
+
+    public static int printANumberInIntArray(int[] intArray, int position) {
+        return intArray[position];
+    }
+
+    public static int totalAmountOfNumbers(int[] intArray) {
+        int numOfNums = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            numOfNums++;
+        }
+        return numOfNums;
+    }
+    public static int minValueGiven(int[] intArray) {
+        int num = 0;
+        int lowest = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            num = intArray[i];
+            if(num < lowest) {
+                lowest = num;
+            }
+        }
+        return lowest;
+    }
+
     public static void main(String[] args) {
         Scanner kbd = new Scanner(System.in);
-        System.out.println("""
-                Enter a list of positive integers, including 0:
-                This program can hold up to 100 numbers:
-                To stop counting before 100 numbers are given, enter a negative number upon completion of your list.
-                """);
+        System.out.println("Enter a list of positive integers, including 0:\nThis program can hold up to 100 numbers:");
         String positiveIntegers = kbd.nextLine();
+        int[] intArray = convertStringIntoIntArray(positiveIntegers);
 
-
+        System.out.println(printANumberInIntArray(intArray, 0));
     }
 }
 //Enter a list of positive integers, including 0:
