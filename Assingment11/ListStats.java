@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class ListStats {
     public static int[] convertStringIntoIntArrayAndSorts(String positiveIntegers) {
         String[] stringArray = positiveIntegers.split(" ");
+        if (stringArray.length > 100) {
+            System.exit(0);
+        }
         int[] intArray = new int[stringArray.length];
 
         for (int i = 0; i < stringArray.length; i++) {
@@ -61,13 +64,15 @@ public class ListStats {
 
     public static void numInArray(int[] intArray, int numberToSearchFor) {
         boolean b = false;
-        for (int num : intArray) {
-            if (num == numberToSearchFor) {
+        int position = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            if (intArray[i] == numberToSearchFor) {
+                position = i;
                 b = true;
             }
         }
         if (b) {
-            System.out.println("The value entered, " + numberToSearchFor + ", was found");
+            System.out.println("The value entered, " + numberToSearchFor + ", was found at position " + position);
         } else {
             System.out.println("The value entered, " + numberToSearchFor + ", was not found.");
         }
