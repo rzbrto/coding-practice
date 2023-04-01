@@ -1,57 +1,109 @@
 package Assingment11;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ListStats {
-    public static int[] convertStringIntoIntArray(String positiveIntegers) {
-        Scanner kbd = new Scanner(System.in);
-        positiveIntegers = kbd.nextLine();
+    public static int[] convertStringIntoIntArrayAndSorts(String positiveIntegers) {
         String[] stringArray = positiveIntegers.split(" ");
         int[] intArray = new int[stringArray.length];
 
-        for (int i = 0; i < stringArray.length + 1; i++) {
+        for (int i = 0; i < stringArray.length; i++) {
             intArray[i] = Integer.parseInt(stringArray[i]);
         }
+        Arrays.sort(intArray);
         return intArray;
     }
 
-    public static int printANumberInIntArray(int[] intArray, int position) {
-        return intArray[position];
+//    public static int minValue(int[] intArray) {
+//        int num = 0;
+//        int lowest = Integer.MAX_VALUE;
+//        for (int j : intArray) {
+//            num = j;
+//            if (num < lowest) {
+//                lowest = num;
+//            }
+//        }
+//        return lowest;
+//    }
+//
+//    public static int maxValue(int[] intArray) {
+//        int num = 0;
+//        int highest = Integer.MIN_VALUE;
+//        for (int j : intArray) {
+//            num = j;
+//            if (num > highest) {
+//                highest = num;
+//            }
+//        }
+//        return highest;
+//    }
+
+    public static float medianValue(int[] intArray) {
+        int middle = intArray.length / 2;
+        float median = 0;
+
+        if (intArray.length % 2 == 0) {
+            median = ((float) intArray[middle] + intArray[middle - 1]) / 2;
+        } else {
+            median = intArray[middle + 1];
+        }
+        return median;
     }
 
-    public static int totalAmountOfNumbers(int[] intArray) {
-        int numOfNums = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            numOfNums++;
+    public static float meanValue(int[] intArray) {
+        int sum = 0;
+        for (int num : intArray) {
+            sum += num;
         }
-        return numOfNums;
+        return ((float) sum / intArray.length);
     }
-    public static int minValueGiven(int[] intArray) {
-        int num = 0;
-        int lowest = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            num = intArray[i];
-            if(num < lowest) {
-                lowest = num;
+
+    public static void numInArray(int[] intArray, int numberToSearchFor) {
+        boolean b = false;
+        for (int num : intArray) {
+            if (num == numberToSearchFor) {
+                b = true;
             }
         }
-        return lowest;
+        if (b) {
+            System.out.println("The value entered, " + numberToSearchFor + ", was found");
+        } else {
+            System.out.println("The value entered, " + numberToSearchFor + ", was not found.");
+        }
+
     }
 
     public static void main(String[] args) {
         Scanner kbd = new Scanner(System.in);
         System.out.println("Enter a list of positive integers, including 0:\nThis program can hold up to 100 numbers:");
         String positiveIntegers = kbd.nextLine();
-        int[] intArray = convertStringIntoIntArray(positiveIntegers);
+        int[] intArray = convertStringIntoIntArrayAndSorts(positiveIntegers);
 
-        System.out.println(printANumberInIntArray(intArray, 0));
+        System.out.println("There were " + intArray.length + " number(s) read.");
+        System.out.println("The minimum value given was " + intArray[0] + ".");
+        System.out.println("The maximum number given was " + intArray[intArray.length - 1] + ".");
+        System.out.printf("The median value of the array is %.2f\n", medianValue(intArray));
+        System.out.printf("The mean value of the array is %.2f\n", meanValue(intArray));
+
+        String yesOrNo = "y";
+        do {
+            System.out.println("\nEnter a number you wish to search for in the array.");
+            int numberToSearchFor = kbd.nextInt();
+            kbd.nextLine();
+            numInArray(intArray, numberToSearchFor);
+            System.out.println("Would you like to continue? Y/N");
+            yesOrNo = kbd.nextLine();
+        } while (yesOrNo.equalsIgnoreCase("y"));
     }
+
 }
+
 //Enter a list of positive integers, including 0:
 //This program can hold up to 100 numbers:
 //1 5 1 5 1 321  2 1 5 4 54 4 655 2 1 516 1 51 84
 //There were 19 numbers(s) read.
-//The minimuum value given was 1.
+//The minimum value given was 1.
 //The maximum number given was 84.
 //The median value of the array is 4.0.
 //The mean value of the array is 90.21052631578948.
