@@ -1,4 +1,4 @@
-package Assignment2;
+package firstJavaCourse.Assignment2;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

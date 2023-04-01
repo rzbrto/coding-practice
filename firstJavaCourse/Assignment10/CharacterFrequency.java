@@ -1,4 +1,4 @@
-package Assignment10;
+package firstJavaCourse.Assignment10;
 
 import java.util.Scanner;
 

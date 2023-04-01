@@ -1,4 +1,4 @@
-package Assingment11;
+package firstJavaCourse.Assingment11;
 
 import java.util.Arrays;
 import java.util.Scanner;
