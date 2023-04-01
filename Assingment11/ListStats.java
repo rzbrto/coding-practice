@@ -18,30 +18,6 @@ public class ListStats {
         return intArray;
     }
 
-//    public static int minValue(int[] intArray) {
-//        int num = 0;
-//        int lowest = Integer.MAX_VALUE;
-//        for (int j : intArray) {
-//            num = j;
-//            if (num < lowest) {
-//                lowest = num;
-//            }
-//        }
-//        return lowest;
-//    }
-//
-//    public static int maxValue(int[] intArray) {
-//        int num = 0;
-//        int highest = Integer.MIN_VALUE;
-//        for (int j : intArray) {
-//            num = j;
-//            if (num > highest) {
-//                highest = num;
-//            }
-//        }
-//        return highest;
-//    }
-
     public static float medianValue(int[] intArray) {
         int middle = intArray.length / 2;
         float median = 0;
