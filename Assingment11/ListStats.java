@@ -21,11 +21,10 @@ public class ListStats {
     public static float medianValue(int[] intArray) {
         int middle = intArray.length / 2;
         float median = 0;
-
         if (intArray.length % 2 == 0) {
             median = ((float) intArray[middle] + intArray[middle - 1]) / 2;
         } else {
-            median = intArray[middle + 1];
+            median = intArray[middle];
         }
         return median;
     }
@@ -39,15 +38,16 @@ public class ListStats {
     }
 
     public static void numInArray(int[] intArray, int numberToSearchFor) {
-        boolean b = false;
+        boolean found = false;
         int position = 0;
         for (int i = 0; i < intArray.length; i++) {
             if (intArray[i] == numberToSearchFor) {
                 position = i;
-                b = true;
+                found = true;
+                break;
             }
         }
-        if (b) {
+        if (found) {
             System.out.println("The value entered, " + numberToSearchFor + ", was found at position " + position);
         } else {
             System.out.println("The value entered, " + numberToSearchFor + ", was not found.");
@@ -67,15 +67,13 @@ public class ListStats {
         System.out.printf("The median value of the array is %.2f\n", medianValue(intArray));
         System.out.printf("The mean value of the array is %.2f\n", meanValue(intArray));
 
-        String yesOrNo = "y";
         do {
             System.out.println("\nEnter a number you wish to search for in the array.");
             int numberToSearchFor = kbd.nextInt();
             kbd.nextLine();
             numInArray(intArray, numberToSearchFor);
             System.out.println("Would you like to continue? Y/N");
-            yesOrNo = kbd.nextLine();
-        } while (yesOrNo.equalsIgnoreCase("y"));
+        } while (kbd.nextLine().equalsIgnoreCase("y"));
     }
 
 }
