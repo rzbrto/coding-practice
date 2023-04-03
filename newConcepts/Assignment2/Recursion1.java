@@ -1,4 +1,4 @@
-package newConcepts.recursion;
+package newConcepts.Assignment2;
 
 import java.util.Scanner;
 
