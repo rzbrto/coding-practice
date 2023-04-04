@@ -78,12 +78,15 @@ public class HailStoneLoop {
         Scanner kbd = new Scanner(System.in);
         System.out.print("What number shall I start with? ");
         int n = kbd.nextInt();
+        System.out.printf("The hailstone sequence starting at %d is:\n", n);
         printSequence(n);
-        System.out.println("length of the hailstone sequence " + lengthOfHailstone(n));
-        System.out.println("largest value " + largestValue(n));
-        System.out.println("length Of Longest Hailstone Sequence " + lengthOfHailstone(n));
+        System.out.printf("The length of the sequence is %d.\n", lengthOfHailstone(n));
+        System.out.printf("The largest number in the sequence is %d.\n", largestValue(n));
+        System.out.printf("The longest hailstone sequence starting with a number up to %d has length %d.\n", n, lengthOfLongestHailstoneSequence(n));
+        System.out.printf("The longest hailstone sequence starting with a number up to %d begins with %d.", n, startValueOfLongestHailstoneSequence(n));
     }
 }
+//http://www.cs.ecu.edu/karl/2530/fall17/Assn/Assn2/assn2.html
 //Write and test a java program that reads a number n from the standard input (after giving a suitable prompt) and then writes the following information on the standard output:
 //
 //    the entire hailstone sequence starting at n, all on one line, with the numbers separated by spaces;
