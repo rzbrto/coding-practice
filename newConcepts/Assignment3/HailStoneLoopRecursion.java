@@ -65,7 +65,7 @@ public class HailStoneLoopRecursion {
 
 }
 //http://www.cs.ecu.edu/karl/2530/fall17/Assn/Assn3/assn3.html
-//Write and test a java program that reads a number n from the standard input (after giving a suitable prompt) and then writes the following information on the standard output:
+//Write and Test a java program that reads a number n from the standard input (after giving a suitable prompt) and then writes the following information on the standard output:
 //
 //    the entire hailstone sequence starting at n, all on one line, with the numbers separated by spaces;
 //
