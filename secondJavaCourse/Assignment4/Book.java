@@ -1,5 +1,9 @@
 package secondJavaCourse.Assignment4;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Book {
     private int bookID;
     private String title, ISBN, author;
@@ -21,6 +25,16 @@ public class Book {
         this.type = array[4].charAt(0);
     }
 
+    //returns the book with that id
+    public static Book bookSearch(ArrayList<Book> books, int id) throws BookNotFoundException {
+        for (Book book : books) {
+            if (book.bookID == id) {
+                return book;
+            }
+        }
+        throw new BookNotFoundException("book with ID: \"%s\" not found".formatted(id));
+    }
+
     @Override
     public String toString() {
         return """
@@ -30,10 +44,15 @@ public class Book {
                 Author: %s
                 Type:   %s
                 """.formatted(
-                        bookID,
-                        title,
-                        ISBN,
-                        author,
-                        type == 'f' ? "Fiction" : "Non-Fiction");
+                bookID,
+                title,
+                ISBN,
+                author,
+                type == 'f' ? "Fiction" : "Non-Fiction");
+    }
+
+    public int getBookID() {
+        return bookID;
     }
 }
+
