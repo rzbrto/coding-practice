@@ -15,7 +15,7 @@ public class DVDApp {
         dvdCollectionManager.loadData("DVDCollection.txt");
         Scanner kbd = new Scanner(System.in);
         int input = 1;
-        dvdCollectionManager.displayInfo();
+        //dvdCollectionManager.displayInfo();
 
         while (input != 0) {
             printMenu();
@@ -29,7 +29,7 @@ public class DVDApp {
                 case 6 -> saveData();
                 case 0 -> exitDVDApp();
             }
-            dvdCollectionManager.displayInfo();
+            // dvdCollectionManager.displayInfo();
         }
     }
 
@@ -51,19 +51,19 @@ public class DVDApp {
     //Removes DVD entry
     private static void removeDVDEntry() {
         Scanner kbd = new Scanner(System.in);
-        System.out.println("Enter tile of DVD to remove: ");
+        System.out.print("\nEnter tile of DVD to remove: ");
         String input = kbd.nextLine();
         DVD dvd = dvdCollectionManager.removeFromDVDCollection(input);
         System.out.println(dvd == null
                 ? "movie not found"
-                : "The following movie has been removed:\n" + dvd);
+                : "\nThe following movie has been removed:\n" + dvd);
         modified = true;
     }
 
     //prints dvds by category
     private static void displayDVDByCategory() {
         Scanner kbd = new Scanner(System.in);
-        System.out.print("Enter the category to look up: ");
+        System.out.print("\nEnter the category to look up: ");
         String input = kbd.nextLine();
         boolean found = false;
 
@@ -82,7 +82,7 @@ public class DVDApp {
     //looks for DVDs
     private static void lookUpDVDEntry() {
         Scanner kbd = new Scanner(System.in);
-        System.out.print("Title to look up: ");
+        System.out.print("\nTitle to look up: ");
         DVD dvd = dvdCollectionManager.getDVDByTitle(kbd.nextLine());
         System.out.println(dvd == null ? "not found" : dvd);
     }
@@ -90,7 +90,7 @@ public class DVDApp {
     //changes entry on dvd
     private static void changeDVDEntry() {
         Scanner kbd = new Scanner(System.in);
-        System.out.print("Enter DVD title to modify: ");
+        System.out.print("\nEnter DVD title to modify: ");
         DVD dvd = dvdCollectionManager.getDVDByTitle(kbd.nextLine());
         System.out.printf(MODIFY_MENU.formatted(dvd.getTitle(), dvd.getTitle(), dvd.getCategory(), dvd.getTime(), dvd.getYear(), dvd.getPrice()));
         int fieldToModify = kbd.nextInt();
@@ -125,7 +125,7 @@ public class DVDApp {
     //adds dvd to entry
     private static void addDVDEntry() {
         Scanner kbd = new Scanner(System.in);
-        System.out.print("Enter DVD data:\nTitle: ");
+        System.out.print("\nEnter DVD data:\nTitle: ");
         String title = kbd.nextLine();
         System.out.print("Category: ");
         String category = kbd.nextLine();
@@ -143,6 +143,7 @@ public class DVDApp {
 
     //prints Modify Menu
     private static final String MODIFY_MENU = """
+                        
             Information of      %s
             (1)Title:           %s
             (2)Category:        %s
@@ -150,11 +151,13 @@ public class DVDApp {
             (4)Year:            %s
             (5)Price:           %.2f
             (0)Return to Main Menu
+                        
             (Enter a option 1 through 5 to modify. Title can not be changed.)
             """;
 
     //prints Menu Options
     private static final String MENU_OPTIONS = """
+                        
             Menu:
             (Choose either 1 through 7)
             (1)Add new DVD Entry
